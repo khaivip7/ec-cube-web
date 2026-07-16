@@ -1096,6 +1096,8 @@ admin.content.block_name: Block Name
 admin.content.block__card_title: Block Settings
 admin.content.block_file_name: File Name
 admin.content.block_file_name_exists: Data with the same file name already exists. Please enter a different one.
+admin.content.block_visible_from: Visible From
+admin.content.block_visible_to: Visible To
 admin.content.js__card_title: JavaScript Settings
 admin.content.block_source_code: Codes
 admin.content.cache__card_title: Caches
@@ -1738,6 +1740,8 @@ tooltip.content.js_source_code: Editing the JavaScript file. Coding has to be wi
 tooltip.content.css_source_code: Editing the CSS file. Coding has to be with CSS.
 tooltip.content.block_name: This is a name of a block for management use.
 tooltip.content.block_file_name: This is the name of the twig template file which has this block contents. You can not change it later in the Admin Console.
+tooltip.content.block_visible_from: Start date and time to show this block. If blank, it displays immediately.
+tooltip.content.block_visible_to: End date and time to show this block. If blank, it displays indefinitely.
 tooltip.content.block_source_code: Editing the template file. Coding has to be with twig.
 tooltip.setting.shop.shop.email_from: This will be the From address when you send emails from your store to your customers.
 tooltip.setting.shop.shop.email_for_inquiries: This is the email address by which you will receive the notice when someone submits an inquiry from the inquiry form.

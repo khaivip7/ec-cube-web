@@ -107,6 +107,39 @@ if (!class_exists(Block::class)) {
          * })
          */
         private $DeviceType;
+        
+        /**
+         * @var \DateTime|null
+         *
+         * @ORM\Column(name="visible_from", type="datetime", nullable=true)
+         */
+        private $visible_from;
+
+        /**
+         * @var \DateTime|null
+         *
+         * @ORM\Column(name="visible_to", type="datetime", nullable=true)
+         */
+        private $visible_to;
+        public function getVisibleFrom(): ?\DateTime
+        {
+            return $this->visible_from;
+        }
+
+        public function setVisibleFrom(?\DateTime $visible_from): void
+        {
+            $this->visible_from = $visible_from;
+        }
+
+        public function getVisibleTo(): ?\DateTime
+        {
+            return $this->visible_to;
+        }
+
+        public function setVisibleTo(?\DateTime $visible_to): void
+        {
+            $this->visible_to = $visible_to;
+        }
 
         /**
          * Constructor

@@ -1096,6 +1096,8 @@ admin.content.block_name: ブロック名
 admin.content.block__card_title: ブロック設定
 admin.content.block_file_name: ファイル名
 admin.content.block_file_name_exists: 同じファイル名のデータが存在しています。別のファイル名を入力してください。
+admin.content.block_visible_from: 表示開始日時
+admin.content.block_visible_to: 表示終了日時
 admin.content.block_source_code: コード
 admin.content.cache__card_title: キャッシュ管理
 admin.content.cache_message: 本番環境にFTPなどでTwigファイルをアップロードして入れ替えた場合、画面を反映させるにはTwigキャッシュを削除する必要があります。
@@ -1738,6 +1740,8 @@ tooltip.content.css_source_code: カスタマイズ用CSSファイルを編集�
 tooltip.content.js_source_code: カスタマイズ用JavaScriptファイルを編集します。JavaScriptで記述します。
 tooltip.content.block_name: ブロックの管理用名称です。
 tooltip.content.block_file_name: このブロックの内容を記述したtwigテンプレートファイルの名前です。管理画面ではあとから変更できません。
+tooltip.content.block_visible_from: このブロックの表示を開始する日時です。空欄の場合は即時表示されます。
+tooltip.content.block_visible_to: このブロックの表示を終了する日時です。空欄の場合は期限なく表示されます。
 tooltip.content.block_source_code: テンプレートファイルを編集します。twigで記述します。
 tooltip.setting.shop.shop.email_from: 店舗からメールを送信した場合の送信元になるメールアドレスです。
 tooltip.setting.shop.shop.email_for_inquiries: 問い合わせフォームから問い合わせがあった場合に、その通知を受信するメールアドレスです。

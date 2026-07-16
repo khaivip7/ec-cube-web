@@ -27,6 +27,7 @@ use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class BlockType extends AbstractType
 {
@@ -93,6 +94,16 @@ class BlockType extends AbstractType
             ->add('DeviceType', EntityType::class, [
                 'class' => \Eccube\Entity\Master\DeviceType::class,
                 'choice_label' => 'id',
+            ])
+            ->add('visible_from', DateTimeType::class, [
+                'required' => false,
+                'widget' => 'single_text',
+                'input' => 'datetime',
+            ])
+            ->add('visible_to', DateTimeType::class, [
+                'required' => false,
+                'widget' => 'single_text',
+                'input' => 'datetime',
             ])
             ->add('id', HiddenType::class)
             ->addEventListener(FormEvents::POST_SUBMIT, function ($event) {
