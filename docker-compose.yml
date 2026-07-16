@@ -41,7 +41,7 @@ services:
       MAILER_DSN: "smtp://mailcatcher:1025"
       ECCUBE_AUTH_MAGIC: "<change.me>"
       # TRUSTED_HOSTS: '^127.0.0.1$$,^localhost$$'
-      # ECCUBE_LOCALE: "ja"
+      ECCUBE_LOCALE: "en"
       # ECCUBE_TIMEZONE: "Asia/Tokyo"
       # ECCUBE_CURRENCY: "JPY"
       # ECCUBE_ADMIN_ROUTE: "admin"
