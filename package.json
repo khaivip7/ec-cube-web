@@ -67,7 +67,7 @@
     "lint-staged": "^16.2.7",
     "normalize.css": "^8.0.1",
     "postcss-import": "^16.1.1",
-    "postcss-sort-media-queries": "^5.2.0",
+    "postcss-sort-media-queries": "^6.6.2",
     "process": "^0.11.10",
     "sass": "^1.93.3",
     "webpack": "^5.105.3",
