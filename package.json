@@ -55,7 +55,7 @@
     "autoprefixer": "^10.4.23",
     "babel-loader": "^10.1.0",
     "browser-sync": "^3.0.4",
-    "cross-env": "^7.0.2",
+    "cross-env": "^10.1.0",
     "gulp": "^5.0.0",
     "gulp-clean-css": "^4.2.0",
     "gulp-notify": "^4.0.0",
