@@ -3750,16 +3750,16 @@
         },
         {
             "name": "nanasess/bcmath-polyfill",
-            "version": "1.0.1",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nanasess/bcmath-polyfill.git",
-                "reference": "a9a588412501053d1038698575d8f5c642f1eea1"
+                "reference": "a0fe84900b5f9d9a179b9367224b5fd198f006c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nanasess/bcmath-polyfill/zipball/a9a588412501053d1038698575d8f5c642f1eea1",
-                "reference": "a9a588412501053d1038698575d8f5c642f1eea1",
+                "url": "https://api.github.com/repos/nanasess/bcmath-polyfill/zipball/a0fe84900b5f9d9a179b9367224b5fd198f006c5",
+                "reference": "a0fe84900b5f9d9a179b9367224b5fd198f006c5",
                 "shasum": ""
             },
             "require": {
@@ -3817,7 +3817,7 @@
                 "issues": "https://github.com/nanasess/bcmath-polyfill/issues",
                 "source": "https://github.com/nanasess/bcmath-polyfill"
             },
-            "time": "2025-09-11T08:08:41+00:00"
+            "time": "2026-07-03T09:08:37+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -4179,16 +4179,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "3.0.51",
+            "version": "3.0.55",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "d59c94077f9c9915abb51ddb52ce85188ece1748"
+                "reference": "db9744e6d47e742b1f974e965ad49bdd041105af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/d59c94077f9c9915abb51ddb52ce85188ece1748",
-                "reference": "d59c94077f9c9915abb51ddb52ce85188ece1748",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/db9744e6d47e742b1f974e965ad49bdd041105af",
+                "reference": "db9744e6d47e742b1f974e965ad49bdd041105af",
                 "shasum": ""
             },
             "require": {
@@ -4269,7 +4269,7 @@
             ],
             "support": {
                 "issues": "https://github.com/phpseclib/phpseclib/issues",
-                "source": "https://github.com/phpseclib/phpseclib/tree/3.0.51"
+                "source": "https://github.com/phpseclib/phpseclib/tree/3.0.55"
             },
             "funding": [
                 {
@@ -4285,7 +4285,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-04-10T01:33:53+00:00"
+            "time": "2026-06-14T23:24:10+00:00"
         },
         {
             "name": "psr/cache",
