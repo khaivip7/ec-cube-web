@@ -64,7 +64,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^5.1.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
+    "lint-staged": "^17.0.8",
     "normalize.css": "^8.0.1",
     "postcss-import": "^16.1.1",
     "postcss-sort-media-queries": "^5.2.0",
