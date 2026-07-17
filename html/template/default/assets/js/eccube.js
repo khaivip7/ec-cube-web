@@ -117,7 +117,31 @@
             var $product_class_id_dynamic = $form.find('[id^=ProductClass]');
             $product_class_id_dynamic.val('');
 
+            // Tồn kho
+            var $stock = $form.parent().find('.stock-default').first();
+            if (typeof this.stock_origin === 'undefined') {
+                this.stock_origin = $stock.html();
+            }
+            $stock.html(this.stock_origin);
+
         } else {
+            // Tồn kho
+            var $stock = $form.parent().find('.stock-default').first();
+            if (typeof this.stock_origin === 'undefined') {
+                this.stock_origin = $stock.html();
+            }
+            if (classcat2) {
+                if (classcat2.stock_unlimited) {
+                    $stock.text('Vô hạn');
+                } else if (classcat2.stock !== null && typeof classcat2.stock !== 'undefined') {
+                    $stock.text(classcat2.stock);
+                } else {
+                    $stock.html(this.stock_origin);
+                }
+            } else {
+                $stock.html(this.stock_origin);
+            }
+
             // 商品コード
             var $product_code = $('.product-code-default');
             if (classcat2 && typeof classcat2.product_code !== 'undefined') {

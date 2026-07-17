@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd9fd1b7da8f5d2b888fd75c0e368df0",
+    "content-hash": "4b4f3573e37631101d37e258288b6b21",
     "packages": [
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -2357,6 +2357,38 @@
                 "source": "https://github.com/EC-CUBE/eccube-plugin-installer/tree/2.0.1"
             },
             "time": "2021-07-20T01:13:11+00:00"
+        },
+        {
+            "name": "ec-cube/securitychecker42",
+            "version": "4.3.1",
+            "dist": {
+                "type": "tar",
+                "url": "https://package-api-c2.ec-cube.net/v43/ec-cube/securitychecker42/4.3.1/Securitychecker42-4.3.1.tgz"
+            },
+            "require": {
+                "ec-cube/plugin-installer": "^2.0"
+            },
+            "type": "eccube-plugin",
+            "extra": {
+                "code": "Securitychecker42",
+                "id": 2402
+            },
+            "license": [
+                "LGPL-2.1-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "EC-CUBE CO.,LTD.",
+                    "email": "support@ec-cube.net"
+                }
+            ],
+            "transport-options": {
+                "http": {
+                    "header": [
+                        "X-ECCUBE-KEY: "
+                    ]
+                }
+            }
         },
         {
             "name": "egulias/email-validator",
@@ -15140,7 +15172,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
@@ -15152,9 +15184,9 @@
         "ext-openssl": "*",
         "ext-zip": "*"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "platform-overrides": {
-        "php": "8.1.0"
+        "php": "8.2.12"
     },
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.6.0"
 }

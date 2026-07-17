@@ -189,6 +189,21 @@ file that was distributed with this source code.
                                                 </div>
                                             {% endif %}
                                         {% endif %}
+                                        <div class="ec-productRole__stock" style="margin-bottom: 10px;">
+                                            <span>Stock: </span>
+                                            <strong class="stock-default">
+                                                {% if Product.hasProductClass %}
+                                                    -
+                                                {% else %}
+                                                    {% set defaultClass = Product.ProductClasses[0] %}
+                                                    {% if defaultClass.stockUnlimited %}
+                                                        Vô hạn
+                                                    {% else %}
+                                                        {{ defaultClass.stock }}
+                                                    {% endif %}
+                                                {% endif %}
+                                            </strong>
+                                        </div>
                                         <div class="ec-numberInput"><span>{{ 'common.quantity'|trans }}</span>
                                             {{ form_widget(form.quantity, {'attr': {'class': 'quantity'}}) }}
                                             {{ form_errors(form.quantity) }}
