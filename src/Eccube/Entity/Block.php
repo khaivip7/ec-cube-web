@@ -121,6 +121,15 @@ if (!class_exists(Block::class)) {
          * @ORM\Column(name="visible_to", type="datetime", nullable=true)
          */
         private $visible_to;
+
+        /**
+         * @var \Eccube\Entity\Block|null
+         *
+         * @ORM\ManyToOne(targetEntity="Eccube\Entity\Block")
+         * @ORM\JoinColumn(name="fallback_block_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
+         */
+        private $fallback_block;
+
         public function getVisibleFrom(): ?\DateTime
         {
             return $this->visible_from;
@@ -139,6 +148,30 @@ if (!class_exists(Block::class)) {
         public function setVisibleTo(?\DateTime $visible_to): void
         {
             $this->visible_to = $visible_to;
+        }
+
+        public function getFallbackBlock(): ?Block
+        {
+            return $this->fallback_block;
+        }
+
+        public function setFallbackBlock(?Block $fallback_block): void
+        {
+            $this->fallback_block = $fallback_block;
+        }
+
+        public function isVisible(\DateTime $now = null): bool
+        {
+            if (!$now) {
+                $now = new \DateTime();
+            }
+            if ($this->visible_from !== null && $this->visible_from > $now) {
+                return false;
+            }
+            if ($this->visible_to !== null && $this->visible_to < $now) {
+                return false;
+            }
+            return true;
         }
 
         /**

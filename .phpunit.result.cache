@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Eccube\\Tests\\Repository\\BlockRepositoryTest::testLayoutFallbackBlocks":3},"times":{"Eccube\\Tests\\Repository\\BlockRepositoryTest::testGetList":0.597,"Eccube\\Tests\\Repository\\BlockRepositoryTest::testBlockVisibility":0.088,"Eccube\\Tests\\Repository\\BlockRepositoryTest::testLayoutFallbackBlocks":0.092}}

@@ -129,6 +129,17 @@ file that was distributed with this source code.
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-2">
+                                        <div class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ 'tooltip.content.block_fallback_block'|trans }}">
+                                            <span>{{ 'admin.content.block_fallback_block'|trans }}</span><i class="fa fa-question-circle fa-lg ms-1"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-10">
+                                        {{ form_widget(form.fallback_block) }}
+                                        {{ form_errors(form.fallback_block) }}
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-2">
                                         <div class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ 'tooltip.content.block_source_code'|trans }}">
                                             <span>{{ 'admin.content.block_source_code'|trans }}</span><i class="fa fa-question-circle fa-lg ms-1"></i>
                                         </div>

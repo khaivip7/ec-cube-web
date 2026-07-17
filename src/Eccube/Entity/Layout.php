@@ -116,11 +116,40 @@ if (!class_exists(Layout::class)) {
 
             // Blockの配列を作成
             $TargetBlocks = [];
+            $now = new \DateTime();
             foreach ($TargetBlockPositions as $BlockPosition) {
-                $TargetBlocks[] = $BlockPosition->getBlock();
+                $Block = $BlockPosition->getBlock();
+                if ($targetId !== null) {
+                    $visibleBlock = $this->getVisibleBlockOrFallback($Block, $now);
+                    if ($visibleBlock) {
+                        $TargetBlocks[] = $visibleBlock;
+                    }
+                } else {
+                    $TargetBlocks[] = $Block;
+                }
             }
 
             return $TargetBlocks;
+        }
+
+        private function getVisibleBlockOrFallback(Block $block, \DateTime $now, array &$visited = []): ?Block
+        {
+            // Tránh vòng lặp vô hạn
+            if (in_array($block->getId(), $visited)) {
+                return null;
+            }
+            $visited[] = $block->getId();
+
+            if ($block->isVisible($now)) {
+                return $block;
+            }
+
+            $fallback = $block->getFallbackBlock();
+            if ($fallback) {
+                return $this->getVisibleBlockOrFallback($fallback, $now, $visited);
+            }
+
+            return null;
         }
 
         /**

@@ -105,6 +105,28 @@ class BlockType extends AbstractType
                 'widget' => 'single_text',
                 'input' => 'datetime',
             ])
+            ->add('fallback_block', EntityType::class, [
+                'class' => Block::class,
+                'choice_label' => 'name',
+                'required' => false,
+                'placeholder' => 'admin.common.select',
+                'query_builder' => function (\Doctrine\ORM\EntityRepository $er) use ($options) {
+                    $Block = $options['data'] ?? null;
+                    $blockId = $Block ? $Block->getId() : null;
+                    $deviceType = $Block ? $Block->getDeviceType() : null;
+
+                    $qb = $er->createQueryBuilder('b');
+                    if ($deviceType) {
+                        $qb->andWhere('b.DeviceType = :deviceType')
+                           ->setParameter('deviceType', $deviceType);
+                    }
+                    if ($blockId) {
+                        $qb->andWhere('b.id <> :blockId')
+                           ->setParameter('blockId', $blockId);
+                    }
+                    return $qb->orderBy('b.name', 'ASC');
+                },
+            ])
             ->add('id', HiddenType::class)
             ->addEventListener(FormEvents::POST_SUBMIT, function ($event) {
                 $form = $event->getForm();
@@ -130,6 +152,26 @@ class BlockType extends AbstractType
                     ->getResult();
                 if (count($Block) > 0) {
                     $form['file_name']->addError(new FormError(trans('admin.content.block_file_name_exists')));
+                }
+
+                // Validation cho visible_from, visible_to và fallback_block
+                $visible_from = $form['visible_from']->getData();
+                $visible_to = $form['visible_to']->getData();
+                $fallback_block = $form['fallback_block']->getData();
+
+                if ($visible_from && $visible_to && $visible_from > $visible_to) {
+                    $form['visible_to']->addError(new FormError(trans('admin.content.block_visible_to_invalid')));
+                }
+
+                $hasTimer = ($visible_from !== null || $visible_to !== null);
+                $hasFallback = ($fallback_block !== null);
+
+                if ($hasTimer && !$hasFallback) {
+                    $form['fallback_block']->addError(new FormError(trans('admin.content.block_fallback_required')));
+                }
+
+                if (!$hasTimer && $hasFallback) {
+                    $form['visible_from']->addError(new FormError(trans('admin.content.block_timer_required')));
                 }
             });
     }
